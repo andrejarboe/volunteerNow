@@ -20,5 +20,7 @@
 -- To create seed files
 -- sequelize seed:create --name my-seed-file
 -- This creates a shell file that can used to populate seed data into the tables for testing in development
+-- After the seed file is created
+-- sequelize db:seed:all
 	
  
