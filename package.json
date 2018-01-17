@@ -1,0 +1,28 @@
+{
+  "name": "volunteernow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrejarboe/volunteerNow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrejarboe/volunteerNow/issues"
+  },
+  "homepage": "https://github.com/andrejarboe/volunteerNow#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.31.2",
+    "sequelize-cli": "^3.2.0"
+  }
+}
