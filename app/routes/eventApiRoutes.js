@@ -39,7 +39,7 @@ module.exports = function (app) {
         organization: req.params.organization
       }
     }).then(function(dbEvent){
-
+      res.json(dbEvent);
     });
   })
 
