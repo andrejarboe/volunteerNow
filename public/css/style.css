@@ -2,10 +2,6 @@
         margin: 0 5px 0 15px;
     }
 
-    #userInputHeader {
-        text-align: center;
-    }
-
     body,
     .form-group,
     .form-control,
@@ -31,15 +27,28 @@
 
 #headerImage {
     max-width: 100%;
-    max-height: 150px;
+    max-height: 200px;
     display: block;
     margin: auto;
+}
+
+#userHeaderImage {
+    max-width: 100%;
+    max-height: 200px;
+    text-align: left;
+}
+
+#userHeaderLabel {
+    text-align: center;
+    color: #818084;
+    margin-top: 43px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,900);
 body {
     font-family: 'Roboto', sans-serif;
 }
+
 
 .header,
 .footer {
@@ -194,15 +203,15 @@ body {
 }
 
 .title2 {
-    background: #98d491;
+    background: #86cd7e;
 }
 
 .title3 {
-    background: #f471b9;
+    background: #f589c5;
 }
 
 .title4 {
-    background: #79c8ec;
+    background: #63bee9;
 }
 
 #button1 {
@@ -322,5 +331,54 @@ body {
     }
     60% {
         transform: translateY(-10px);
+    }
+}
+
+#navbar {
+    position: relative;
+    float: right;
+    text-align: right;
+}
+
+.btn-default {
+    border-color: 818084;
+    color: #fff;
+    font-size: 20px
+}
+
+.btn-about {
+    background-color: #86cd7e;
+}
+
+.btn-volunteer {
+    background-color: #f589c5;
+}
+
+.btn-organization {
+    background-color: #63bee9;
+}
+
+.btn-login {
+    background-color: #f79c6e;
+    margin-right: 10px;
+}
+
+#userSubmit {
+    background-color: #63bee9;
+    border: 1px solid #818084;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+img {
+    height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-about,
+    .btn-volunteer,
+    .btn-login,
+    .btn-organization {
+        display: none;
     }
 }
