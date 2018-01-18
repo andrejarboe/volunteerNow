@@ -11,7 +11,6 @@ var sequelizeRouter = require('sequelize-router');
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
-
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -36,7 +35,6 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-
 
 
 
