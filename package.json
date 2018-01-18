@@ -9,7 +9,17 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
     "sequelize": "^4.31.2",
-    "sequelize-router": "^1.0.6"
+    "sequelize-router": "^1.0.6",
+    "bcryptjs": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
   },
   "devDependencies": {},
   "scripts": {
