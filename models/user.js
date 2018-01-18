@@ -5,14 +5,20 @@ module.exports = (sequelize, DataTypes) => {
     last_name: DataTypes.STRING,
     address: DataTypes.STRING,
     city: DataTypes.STRING,
-    zip_code: DataTypes.STRING,
+    state: DataTypes.STRING,
+               zip_code: DataTypes.STRING,
     dob: DataTypes.DATE,
     gender: DataTypes.STRING,
     email: DataTypes.STRING,
-    skils: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    skills: DataTypes.STRING,
+    user_type: DataTypes.STRING,
     experience: DataTypes.STRING,
+    pic_url: DataTypes.STRING,
     password: DataTypes.STRING,
-    password_confirmation: DataTypes.STRING
+    password_confirmation: DataTypes.STRING,
+    days_available: DataTypes.STRING,
+    times_available: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
@@ -23,3 +29,5 @@ module.exports = (sequelize, DataTypes) => {
   });
   return User;
 };
+
+
