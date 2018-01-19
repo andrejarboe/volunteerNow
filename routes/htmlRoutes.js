@@ -37,7 +37,19 @@ module.exports = function(app){
     res.render("users",{usersData});
   });
 
-  //one 
+  app.get("/test", function(req, res){
+    
+  });
+
+  //one user
+  app.get("/user/:id", function(req, res) {   
+    var id = req.params.id-1;
+    res.render("user", usersData[id]);
+
+    console.log(usersData[0]);
+    
+    
+  });
    //org 
 
    //one org
