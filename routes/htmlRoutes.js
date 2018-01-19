@@ -8,6 +8,7 @@ var path = require("path");
 
 var sequelizeRouter = require('sequelize-router');
 
+var users = require("../data/users");
 
 // Routes
 // =============================================================
@@ -37,6 +38,13 @@ module.exports = function(app){
       users
     });
   });
+
+  //one 
+   //org 
+
+   //one org
+
+   //events
 
   // events route loads the event(s)
   app.get("/events/:id ", function(req, res) {

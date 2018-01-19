@@ -6,7 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var sequelizeRouter = require('sequelize-router');
+var sequelizeRouter = require('sequelize-router');  
 // Sets up the Express App
 // =============================================================
 var app = express();
