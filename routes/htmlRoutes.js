@@ -34,8 +34,7 @@ module.exports = function(app){
   //store user data
   //push data to route
   app.get("/users", function(req, res) {
-    console.log(usersData);
-    
+    res.render("users",{usersData});
   });
 
   //one 
