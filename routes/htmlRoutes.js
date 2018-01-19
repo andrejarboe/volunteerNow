@@ -15,14 +15,14 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  //user signup forum
+  //user sign up forum
   app.get("/user/signup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/user.html"));
   });
 
-  //user signup forum
-  app.get("/organization-signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/organization.html"));
+  //organization sign up forum
+  app.get("/organization/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/organizationSignUp.html"));
   });
 
   // events route loads the event(s)
