@@ -25,6 +25,7 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
+require('./routes/htmlRoutes.js')(app);
 
  
 app.use('/api', sequelizeRouter(db.User)); 

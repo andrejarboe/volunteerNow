@@ -16,7 +16,7 @@ module.exports = function(app){
   });
 
   //user signup forum
-  app.get("/user-signup", function(req, res) {
+  app.get("/user/signup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/user.html"));
   });
 
