@@ -1,0 +1,15 @@
+.caption {
+	text-align: center;
+	font-size: 25px;
+}
+
+.thumbnail {
+	padding-top: 35px;
+	background-color: lightgray;
+	border: 1px solid black;
+}
+
+.thumbnail img {
+	height: 150px;
+
+}

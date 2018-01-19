@@ -1,0 +1,25 @@
+<div class = "handlebar-nav">
+	<ul>
+		<li> <a href= "./user">Volunteer Profile</a> </li>
+		{{!-- <li> | </li>
+		<li> <a href= "./female-friends">Female Friends </li>
+		<li> | </li>
+		<li> <a href= "./male-friends">Male Friends </li> --}}
+	</ul>
+</div>
+
+
+{{!-- {{#each user }} --}}
+	<div class="col-md-3">
+		<div class="thumbnail">
+			<img alt="Bootstrap Thumbnail First" src="{{photo}}" />
+			<div class="caption">	
+				<p id="handlebar-title">{{first_name}},{{last_name}}</p>
+				<p>{{address}} </p>
+				<p>{{city}},{{ state}},{{zip_code}} </p>
+				<p>{{phone}} </p>		
+				<p>{{email}} </p>
+			</div>
+		</div>
+	</div>
+{{!-- {{/each}} --}}
