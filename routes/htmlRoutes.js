@@ -8,7 +8,7 @@ var path = require("path");
 
 var sequelizeRouter = require('sequelize-router');
 
-var users = require("../data/users");
+var usersData = require("../data/user");
 
 // Routes
 // =============================================================
@@ -34,9 +34,8 @@ module.exports = function(app){
   //store user data
   //push data to route
   app.get("/users", function(req, res) {
-    res.render("users", {
-      users
-    });
+    console.log(usersData);
+    
   });
 
   //one 
