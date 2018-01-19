@@ -103,7 +103,7 @@ $(document).ready(function() {
 
     $("#userSubmit").on("click", handleUserSubmit);
 
-    function handleUserSubmit() {
+    function handleUserSubmit(event) {
         event.preventDefault();
 
         var newUser = {
