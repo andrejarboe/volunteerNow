@@ -4,11 +4,9 @@ $(document).ready(function() {
         var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         var times = ["Morning", "Afternoon", "Evening"];
         var skills = ["Fundraising", "Event Planning", "Organization", "Bookkeeping", "Leadership", "Crafts", "Electrical", "Carpentry", "Cooking", "Clean Up"];
-        var userHeader = $("<div class='page-header'><h1>Volunteer Information</h1>");
         var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
         var genders = ["M", "F"];
         var updating = false;
-        $("#userInputHeader").append(userHeader);
 
         var j = 1;
         for (var i = 1; i < 8; i++) {
@@ -35,7 +33,7 @@ $(document).ready(function() {
             }
         }
 
-var k = 1;
+        var k = 1;
         for (var i = 0; i < times.length; i++) {
             var times1 = $("<div>").add("<input>");
             times1.addClass("form-check-input times");
@@ -60,7 +58,7 @@ var k = 1;
             }
         }
 
-var l = 1;
+        var l = 1;
         for (var i = 0; i < skills.length; i++) {
             var skills1 = $("<div>").add("<input>");
             skills1.addClass("form-check-input skills");
@@ -103,52 +101,37 @@ var l = 1;
 
     buildUserInput();
 
-    $("#userSubmit").on("submit", handleUserSubmit);
+    $("#userSubmit").on("click", handleUserSubmit);
 
     function handleUserSubmit() {
         event.preventDefault();
 
         var newUser = {
-            first_name: firstName.val(),
-            last_name: lastName.val(),
-            address: inputAddress.val(),
-            city: inputCity.val(),
-            state: inputState.val(),
-            zip_code: inputZip.val(),
-            dob: DOB.val(),
-            gender: inputGender.val(),
-            email: inputEmail.val(),
-            phone: inputPhone.val(),
-            days: inputDays.val(),
-            times: inputTimes.val(),
-            skills: inputSkills.val(),
-            experience: inputExperience.val()
+            first_name: $("#firstName").val(),
+            last_name: $("#lastName").val(),
+            address: $("#inputAddress").val(),
+            city: $("#inputCity").val(),
+            state: $("#inputState").val(),
+            zip_code: $("#inputZip").val(),
+            dob: $("#DOB").val(),
+            gender: $("#inputGender").val(),
+            email: $("#inputEmail").val(),
+            phone: $("#inputPhone").val(),
+            days: $("#inputDays").val(),
+            times: $("#inputTimes").val(),
+            skills: $("#inputSkills").val(),
+            experience: $("#inputExperience").val()
         };
 
-        if (updating) {
-            id = userId;
-            updateUser(newUser);
-        } else {
-            submitUser(newUser);
-        }
+        submitUser(newUser);
+
     }
 
     function submitUser(user) {
-        $.post("/api/user", newUser, function() {
-            console.log(newUser);
+        $.post("/api/user", user, function() {
             window.location.href = "/users";
         });
     }
 
-    function updateUser(user) {
-        $.ajax({
-                method: "PUT",
-                url: "/api/user",
-                data: newUser
-            })
-            .then(function() {
-                window.location.href = "/needtofindout";
-            });
-    }
-
+    
 })
