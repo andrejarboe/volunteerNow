@@ -1,29 +1,25 @@
-/*    input[type=checkbox] {
-        margin: 0 5px 0 15px;
-    }
+body,
+.form-group,
+.form-control,
+.btn {
+    font-size: 32px;
+}
 
+.form-control {
+    height: 54px;
+}
+
+@media only screen and (min-width: 768px) {
     body,
     .form-group,
     .form-control,
     .btn {
-        font-size: 32px;
+        font-size: 18px;
     }
-
     .form-control {
-        height: 54px;
+        height: 34px;
     }
-
-        @media only screen and (min-width: 768px) {
-        body,
-        .form-group,
-        .form-control,
-        .btn {
-            font-size: 18px;
-        }
-        .form-control {
-            height: 34px;
-        }
-    }*/
+}
 
 #headerImage {
     max-width: 100%;
@@ -216,18 +212,22 @@ body {
 
 #button1 {
     background: #f36e2a;
+    font-size: 18px;
 }
 
 #button3 {
     background: #ed1d8f;
+        font-size: 18px;
 }
 
 #button4 {
     background: #37ade3;
+        font-size: 18px;
 }
 
 #button2 {
     background: #56b94c;
+        font-size: 18px;
 }
 
 .section .title h2 {
@@ -381,4 +381,8 @@ img {
     .btn-organization {
         display: none;
     }
+}
+
+.jumbotron {
+    background-color: #d2edf9;
 }

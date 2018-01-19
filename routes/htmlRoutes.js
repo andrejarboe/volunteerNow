@@ -6,6 +6,10 @@
 // =============================================================
 var path = require("path");
 
+var sequelizeRouter = require('sequelize-router');
+
+var usersData = require("../data/user");
+
 // Routes
 // =============================================================
 module.exports = function(app){
@@ -15,15 +19,30 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  //user signup forum
+  //user sign up forum
   app.get("/user/signup", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/user.html"));
   });
 
-  //user signup forum
-  app.get("/organization-signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/organization.html"));
+  //organization sign up forum
+  app.get("/organization/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/organizationSignUp.html"));
   });
+
+  /* handlebars
+  *****************************************/
+  //store user data
+  //push data to route
+  app.get("/users", function(req, res) {
+    res.render("users",{usersData});
+  });
+
+  //one 
+   //org 
+
+   //one org
+
+   //events
 
   // events route loads the event(s)
   app.get("/events/:id ", function(req, res) {
@@ -36,7 +55,7 @@ module.exports = function(app){
   });
 
 
-  //Organization profil route loads organization profile(s)
+  //Organization profile route loads organization profile(s)
   app.get("/organization/:id ", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/partials/organization.html"));
   });

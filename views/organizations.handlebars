@@ -1,0 +1,23 @@
+<div class = "handlebar-nav">
+	<ul>
+		<li> <a href= "./organizations">Organizations</a> </li>
+	</ul>
+</div>
+
+
+{{#each organizations }}
+	<div class="col-md-3">
+		<div class="thumbnail">
+			<img alt="Bootstrap Thumbnail First" src="{{photo}}" />
+			<div class="caption">	
+				<p id="handlebar-title">{{organization_name}}</p>
+				<p>{{organization_desc}}</p>
+				<p>{{address}}</p>
+				<p>{{city}},{{state}},{{zip}}</p>
+				<p>{{contact_person}}-{{contact_person_role}}</p>
+				<p>{{email}}</p>
+				<p>{{phone}}</p>		
+			</div>
+		</div>
+	</div>
+{{/each}}
