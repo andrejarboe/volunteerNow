@@ -6,6 +6,9 @@
 // =============================================================
 var path = require("path");
 
+var sequelizeRouter = require('sequelize-router');
+
+
 // Routes
 // =============================================================
 module.exports = function(app){
@@ -25,6 +28,16 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../public/organizationSignUp.html"));
   });
 
+  /* handlebars
+  *****************************************/
+  //store user data
+  //push data to route
+  app.get("/users", function(req, res) {
+    res.render("users", {
+      users
+    });
+  });
+
   // events route loads the event(s)
   app.get("/events/:id ", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/partials/events.html"));
@@ -36,7 +49,7 @@ module.exports = function(app){
   });
 
 
-  //Organization profil route loads organization profile(s)
+  //Organization profile route loads organization profile(s)
   app.get("/organization/:id ", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/partials/organization.html"));
   });
