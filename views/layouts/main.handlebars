@@ -12,12 +12,21 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="col-md-4">
+    <div class="container-fluid handlebarsheader">
+        <div class="col-md-4 col-sm-6">
             <img id="userHeaderImage" src="./images/logo3.png" alt="logo">
         </div>
-        <div class="row">
-            <div class="col-md-12">
+         <div class="col-md-4 col-sm-6">
+            <div>
+                <h1 class="headerLabel"></h1>
+            </div>
+        </div>
+    </div>
+    <hr id="hrtop">
+    <hr id="hrbottom">
+    <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
                 <div class="row">
                     {{{ body }}}
                 </div>

@@ -85,17 +85,4 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../views/partials/userProfile.html"));
     });
 
- app.get('/css/style.css', function(req, res) {
-        res.sendFile(__dirname, "../public/css/style.css");
-    });
-
-    app.get('/javascript/volunteer.js', function(req, res) {
-        res.sendFile(__dirname, "../public/javascript/volunteer.js");
-    });
-
-    app.get('/images/logo.png', function(req, res) {
-        res.sendFile(__dirname, "../public/images/logo.png");
-    });
-    
-
 }

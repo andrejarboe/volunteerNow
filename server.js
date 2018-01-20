@@ -8,6 +8,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var sequelizeRouter = require('sequelize-router');
 var exphbs = require("express-handlebars"); 
+var path = require("path");
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -27,7 +29,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public")));
+app.use("/user",express.static(path.join(__dirname, "/public")));
+
 
 // Routes
 // =============================================================
