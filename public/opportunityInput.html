@@ -2,91 +2,90 @@
 <html lang="en">
 
 <head>
-    <title>Register your organization</title>
+    <title>Post a Volunteer Opportunity</title>
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--     <link href="css/jquery.multiselect.css" rel="stylesheet" type="text/css"> -->
     <!-- css reset-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- custom css-->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link href="css/jquery.multiselect.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<style>
-.ms-options-wrap > .ms-options > ul li.selected label,
-.ms-options-wrap > .ms-options > ul label:hover {
-    background-color: #63B1B1;
-}
-</style>
-
 <body>
-
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">VolunteerNow!</a>
-        <a class="navbar-brand" href="#">Input a new opportunity</a>        
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Home</a></li>
-<!--           <li><a href="#">User Sign Up</a></li>
-          <li><a href="#"> Place Holder  </a></li> -->
-        </ul>
-      </div>
-    </div>
-  </nav>
-
     <div class="container-fluid">
+        <div class="col-md-4">
+            <img id="userHeaderImage" src="./images/logo3.png" alt="logo">
+        </div>
+        <div class="col-md-4">
+            <div>
+                <h1 id="userHeaderLabel">Post a Volunteer Opportunity</h1>
+            </div>
+        </div>
+    </div>
+    <div id="opportunityInput" class="container jumbotron">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default survey-main">
-                    <div class="panel-heading">
-                        <h1 class="panel-title">
-						Describe the new volunteer opportunity 
-					</h1>
-                    </div>
                     <div class="panel-body" id="questions">
-                        <div class="form-group" class='col-sm-6'>
-                            <label for="org-title">Opportunity Title:</label>
-                            <input type="text" class="form-control" id="org-title" required>
-                        </div>  
-                        <div class="form-group" class='col-sm-6'>
-                            <label for="org-contact">Contact:</label>
-                            <input type="text" class="form-control" id="org-contact" required>
-                        </div> 
-                        <div class="form-group" class='col-sm-6'>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
+                            <label for="opportunity-title">Opportunity Title:</label>
+                            <input type="text" class="form-control" id="opportunity-title" required>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
+                            <label for="org_id">Organization Name:</label>
+                            <input type="text" class="form-control" id="org_id" required>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
+                            <label for="description">Opportunity Description:</label>
+                            <textarea class="form-control" id="description" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
+                            <label for="opportunity-contact">Opportunity Image URL:</label>
+                            <input type="text" class="form-control" id="img_url" required>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
+                            <label for="opportunity-contact">Contact:</label>
+                            <input type="text" class="form-control" id="opportunity-contact" required>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
                             <label for="email">Email:</label>
                             <input type="text" class="form-control" id="email" required>
-                        </div>                                                                         
-                        <div class="form-group"class='col-sm-6'>
-                            <label for="address">Address where opportunity takes place:</label>
-							<input type="text" class="form-control" id="address" required>
-                        </div>                    
-                        <div class="form-group" class='col-sm-3'>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
+                            <label for="address">Address where opportunity will take place:</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <div class="form-group" class='col-md-4 col-sm-6'>
                             <label for="city">City:</label>
                             <input type="text" class="form-control" id="city" required>
                         </div>
-                        <div class="form-group" class='col-sm-3'>
-                            <label for="state">State:</label>
-							<input type="text" class="form-control" id="state" required>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="state">State</label>
+                            <select id="state" class="form-control">
+                                <option>Choose...</option>
+                            </select>
                         </div>
-                        <div class="form-group" class='col-sm-3'>
+                        <div class="form-group col-md-4 col-sm-6">
                             <label for="zip">Zip Code:</label>
-							<input type="text" class="form-control" id="zip" required>
-                        </div> 
-
+                            <input type="text" class="form-control" id="zip" required>
+                        </div>
                         <div class="container">
-                            <div class='col-md-4'>
+                            <div class="form-group col-md-4 col-sm-6">
+                                <label for="minDate">Start Date/Time:</label>
+<!--                                 <div class="input-group date" id="startDatePicker">
+                                    <input type="text" class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div> -->
+
                                 <div class="form-group">
-                                    <label for="startdate">Start Date/Time:</label>
                                     <div class='input-group date' id='datetimepicker6'>
                                         <input type='text' class="form-control" />
                                         <span class="input-group-addon">
@@ -94,151 +93,93 @@
                                         </span>
                                     </div>
                                 </div>
+
                             </div>
-                            <div class='col-md-4'>
+                            <div class="form-group col-md-4 col-sm-6">
+                                <label for="minDate">End Date/Time:</label>
+<!--                                 <div class="input-group date" id="endDatePicker">
+                                    <input type="text" class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div> -->
                                 <div class="form-group">
-                                    <label for="enddate">End Date/Time:</label>                                    
-                                    <div class='input-group date' id='datetimepicker7'>
-                                        <input type='text' class="form-control" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
+                                        <div class='input-group date' id='datetimepicker7'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
                                 </div>
                             </div>
                         </div>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker6').datetimepicker();
-                                $('#datetimepicker7').datetimepicker({
-                                    useCurrent: false //Important! See issue #1075
-                                });
-                                $("#datetimepicker6").on("dp.change", function (e) {
-                                    $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-                                });
-                                $("#datetimepicker7").on("dp.change", function (e) {
-                                    $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-                                });
-                            });
-                        </script>
 
-                        <div class="form-group">
-                            <label for="countvolunteersneeded">How many volunteers are needed?:</label>
-                            <input type="text" class="form-control" id="countvolunteersneeded" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Opportunity Description:</label>
-                            <textarea class="form-control" id="description" rows="5" required></textarea>
-                        </div>
-                        <div class="container">
-                            <strong>Select Skills Needed:</strong>
-                            <select id="skills-checkboxes" multiple="multiple">
-                             <!--    Need to populate options with a jQuery link to the skills db -->
-                                <option value="php">PHP</option>
-                                <option value="javascript">JavaScript</option>
-                                <option value="java">Java</option>
-                                <option value="sql">SQL</option>
-                                <option value="jquery">Jquery</option>
-                                <option value=".net">.Net</option>
-                            </select>
-                        </div>
-                        <script type="text/javascript">
-                            $(document).ready(function() {
-                                $('#skills-checkboxes').multiselect();
-                            });
-                        </script>
-
-<div class="container">
-<h3>Causes this is associated with</h3>
-    <select name="multicheckbox[]" multiple="multiple" class="4col formcls">
-        <option value="advocacy">Advocacy & Human Rights</option>
-        <option value="animals">Animals</option>
-        <option value="arts">Arts & Culture</option>
-        <option value="boards">Board Development</option>
-        <option value="children">Children & Youth</option>
-        <option value="community">Community</option>
-        <option value="IT">Computers & IT</option>
-        <option value="crisis">Crisis Support</option>
-        <option value="disasters">Disaster Relief</option>
-        <option value="education">Education & Literacy</option>
-        <option value="emergency">Emergency & Safety</option>
-        <option value="employment">Employment</option>
-        <option value="environment">Environment</option>
-        <option value="health">Health & Medicine</option>
-        <option value="housing">Homelessness & Housing</option>
-        <option value="hunger">Hunger</option>
-        <option value="immigrants">Immigrants</option>
-        <option value="international">International</option>
-        <option value="law">Justice & Legal</option>
-        <option value="politics">Politics</option>
-        <option value="seniors">Seniors</option>
-        <option value="sports">Sports & Recreation</option>
-<!--         <option value="MS">Mississippi</option>
-        <option value="MO">Missouri</option>
-        <option value="MT">Montana</option>
-        <option value="NE">Nebraska</option>
-        <option value="NV">Nevada</option>
-        <option value="NH">New Hampshire</option>
-        <option value="NJ">New Jersey</option>
-        <option value="NM">New Mexico</option>
-        <option value="NY">New York</option>
-        <option value="NC">North Carolina</option>
-        <option value="ND">North Dakota</option>
-        <option value="OH">Ohio</option>
-        <option value="OK">Oklahoma</option>
-        <option value="OR">Oregon</option>
-        <option value="PA">Pennsylvania</option>
-        <option value="RI">Rhode Island</option>
-        <option value="SC">South Carolina</option>
-        <option value="SD">South Dakota</option>
-        <option value="TN">Tennessee</option>
-        <option value="TX">Texas</option>
-        <option value="UT">Utah</option>
-        <option value="VT">Vermont</option>
-        <option value="VA">Virginia</option>
-        <option value="WA">Washington</option>
-        <option value="WV">West Virginia</option>
-        <option value="WI">Wisconsin</option>
-        <option value="WY">Wyoming</option> -->
-    </select>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-<script src="js/multiselect-checkbox/jquery.multiselect.js"></script>
-<script>
-$('select[multiple]').multiselect({
-    columns: 4,
-    placeholder: 'Select options'
-});
-</script>
-
-
-<!--                         <div class="container">
-                            <strong>Opportunity is associated with which Causes?:</strong>
-                            <select id="causes-checkboxes" multiple="multiple">
-                             <!--    Need to populate options with a jQuery link to the skills db -->
-<!--                                 <option value="php">PHP</option>
-                                <option value="javascript">JavaScript</option>
-                                <option value="java">Java</option>
-                                <option value="sql">SQL</option>
-                                <option value="jquery">Jquery</option>
-                                <option value=".net">.Net</option>
-                            </select>
-                        </div>
-                        <script type="text/javascript">
-                            $(document).ready(function() {
-                                $('#causes-checkboxes').multiselect();
-                            });
-                        </script> -->
- -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="orgSignUp-submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit </button>
-                </div>
+<!-- <div class="container">
+    <div class='col-md-5'>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker6'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
             </div>
         </div>
     </div>
+    <div class='col-md-5'>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker7'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div> -->
 
-    <script type="text/javascript" src="assets/js/index.js"></script>
+
+                        <!-- linked datepicker container -->
+                        <br>
+                        <div class="form-group col-md-3 col-sm-12">
+                            <label for="inputSkills">Skills Required:
+                                <br>
+                            </label>
+                        </div>
+                        <div class="col-md-9 col-sm-12">
+                            <div class="form-check skills">
+                                <div class="col-md-3 col-sm-4" id="skills1"></div>
+                                <div class="col-md-3 col-sm-4" id="skills2"></div>
+                                <div class="col-md-3 col-sm-4" id="skills3"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group col-md-3 col-sm-12">
+                            <label for="inputSkills">Causes associated with Opportunity:
+                                <br>
+                            </label>
+                        </div>
+                        <div class="col-md-9 col-sm-12">
+                            <div class="form-check causes">
+                                <div class="col-md-3 col-sm-4" id="causes1"></div>
+                                <div class="col-md-3 col-sm-4" id="causes2"></div>
+                                <div class="col-md-3 col-sm-4" id="causes3"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group" class='col-md-1 col-sm-2'>
+                            <label for="num_of_volunteers">How many volunteers are needed?:</label>
+                            <input type="text" class="form-control" id="num_of_volunteers" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="opportunityPost-submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--         <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script> -->
+        <script type="text/javascript" src="./javascript/opportunity_post.js"></script>
 </body>
 
 </html>
