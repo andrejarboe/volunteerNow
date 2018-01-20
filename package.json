@@ -10,6 +10,7 @@
     "faker": "^4.1.0",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
+    "s3fs": "git+https://github.com/RiptideElements/s3fs.git",
     "sequelize": "^4.31.2",
     "sequelize-router": "^1.0.6"
   },
