@@ -1,25 +1,22 @@
-<div class = "handlebar-nav">
-	<ul>
-		<li> <a href= "./user">Volunteer Profile</a> </li>
-		{{!-- <li> | </li>
-		<li> <a href= "./female-friends">Female Friends </li>
-		<li> | </li>
-		<li> <a href= "./male-friends">Male Friends </li> --}}
-	</ul>
-</div>
 
-
-{{!-- {{#each user }} --}}
+<div class="container">
 	<div class="col-md-3">
-		<div class="thumbnail">
+	</div>
+	<div class="col-md-6">
+		<div class="thumbnailUser">
 			<img alt="Bootstrap Thumbnail First" src="{{pic_url}}" />
 			<div class="caption">	
-				<p id="handlebar-title">{{first_name}},{{last_name}}</p>
-				<p>{{address}} </p>
-				<p>{{city}},{{ state}},{{zip_code}} </p>
-				<p>{{phone}} </p>		
-				<p>{{email}} </p>
+				<p id="handlebar-title">{{first_name}} {{last_name}}</p>
+				<p class="handlebarsP"><strong>Phone: </strong> {{phone}} </p>		
+				<p class="handlebarsP"><strong>Email: </strong> {{email}} </p>
+				<p class="handlebarsP"><strong>Skills: </strong></p>
+				<p class="handlebarsP"><strong>Additional Information: </strong></p>
 			</div>
 		</div>
 	</div>
-{{!-- {{/each}} --}}
+</div>
+
+
+<script type="text/javascript">
+$(".headerLabel").append("Volunteer Profile");
+</script>
