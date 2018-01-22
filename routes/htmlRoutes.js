@@ -41,7 +41,7 @@ module.exports = function(app) {
 
   /* handlebars
      *****************************************/
-  //html route to display all users 
+  //html route to display all users
   app.get("/users", function(req, res) {
     db.User.findAll({}).then(function(dbUsers) {
       res.render("users", { usersData: dbUsers });
@@ -53,22 +53,27 @@ module.exports = function(app) {
     db.User.findOne({
       where: {
         id: req.params.id
-      },
+      }
     }).then(function(dbUser) {
-      console.log("*******************");  
-      console.log("ID is: "+req.params.id);
-      console.log("user is: "+dbUser);
-      console.log("*******************");
-    res.render("user", {user: dbUser});
+      res.render("user", { user: dbUser });
     });
   });
 
+  //html route to display all organizations
+  app.get("/organizations", function(req, res) {
+    db.Organization.findAll({}).then(function(dbOrganizations) {
+      res.render("organizations", { organizations: dbOrganizations });
+    });
+  });
 
-  //org
+  //html route to display all Opportunities
+  app.get("/opportunities", function(req, res) {
+    db.Opportunity.findAll({}).then(function(dbOpportunity) {
+      res.render("opportunity", { opportunity: dbOpportunity });
+    });
+  });
 
-  //one org
-
-  //events
+  /***************************************************************/
 
   // events route loads the event(s)
   app.get("/events/:id ", function(req, res) {
