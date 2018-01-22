@@ -74,7 +74,7 @@ $(document).ready(function() {
     function handleOpportunitySearchSubmit() {
         event.preventDefault();
 
-        var opportunity = {
+        var opportunitySearch = {
             title: $("#opportunity-title").val(),
             contact: $("#opportunity-contact").val(),
             email: $("#email").val(),          
@@ -96,7 +96,7 @@ console.log("Opportunity Search= " + opportunitySearch)
     }
 
     function submitOpportunitySearch(opportunitySearch) {
-        $.post("/api/opportunitySearch", opportunitySearch, function() {
+        $.get("/api/opportunitySearch", opportunitySearch, function() {
             window.location.href = "/opportunitySearch";
         });
     }
