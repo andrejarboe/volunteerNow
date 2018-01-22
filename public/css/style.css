@@ -304,6 +304,7 @@ body {
     display: block;
 }
 
+<<<<<<< Updated upstream
 /*@-webkit-keyframes bounce {
     0%,
     20%,
@@ -336,6 +337,8 @@ body {
     }
 }*/
 
+=======
+>>>>>>> Stashed changes
 #navbar {
     position: relative;
     float: right;
@@ -365,7 +368,7 @@ body {
     margin-right: 10px;
 }
 
-#userSubmit {
+#userSubmit, #registerSubmit {
     background-color: #63bee9;
     border: 1px solid #818084;
     border-radius: 4px;

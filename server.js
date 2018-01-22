@@ -6,11 +6,13 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var sequelizeRouter = require('sequelize-router');
+var session = require("express-session");
+// var sequelizeRouter = require('sequelize-router');
 var exphbs = require("express-handlebars"); 
 const busboy = require('connect-busboy');
 const busboyBodyParser = require('busboy-body-parser');
 var path = require("path");
+var passport = require("./config/passport");
 
 // Sets up the Express App
 // =============================================================
@@ -35,7 +37,9 @@ app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, "/public")));
 app.use("/user",express.static(path.join(__dirname, "/public")));
 
-
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // =============================================================
@@ -44,6 +48,7 @@ require('./routes/apiRoutes.js')(app);
 
  app.use('/api', sequelizeRouter(db.Opportunity));
 //app.use('/api', sequelizeRouter(db.User)); 
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
