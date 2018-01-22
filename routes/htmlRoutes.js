@@ -8,7 +8,6 @@ var path = require("path");
 var fs = require("fs");
 var sequelizeRouter = require("sequelize-router");
 var db = require("../models");
-var usersData = require("../data/user");
 
 var users = [];
 
@@ -30,17 +29,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/organizationSignUp.html"));
   });
 
-  //one user
-  // app.get("/user/:id", function(req, res) {
-  //   var id = req.params.id - 1;
-  //   res.render("user", usersData[id]);
-
-  //   console.log(usersData[0]);
-  // });
-  //org
 
   /* handlebars
-     *****************************************/
+  *****************************************/
   //html route to display all users
   app.get("/users", function(req, res) {
     db.User.findAll({}).then(function(dbUsers) {
