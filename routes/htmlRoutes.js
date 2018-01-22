@@ -32,6 +32,10 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/organizationSignUp.html"));
     });
 
+    app.get("/opportunities/new", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/opportunityinput.html"));
+    });
+
 
   app.get("/test", function(req, res){
     

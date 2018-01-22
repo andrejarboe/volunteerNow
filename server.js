@@ -42,7 +42,7 @@ app.use("/user",express.static(path.join(__dirname, "/public")));
 require('./routes/htmlRoutes.js')(app);
 require('./routes/apiRoutes.js')(app);
 
- 
+ app.use('/api', sequelizeRouter(db.Opportunity));
 //app.use('/api', sequelizeRouter(db.User)); 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
