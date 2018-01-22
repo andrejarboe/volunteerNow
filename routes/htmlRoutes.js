@@ -38,7 +38,7 @@ module.exports = function(app) {
     });
 
     //organization sign up forum
-    app.get("/users", isAuthenticated, function(req, res) {
+    app.get("/profile", isAuthenticated, function(req, res) {
 
         res.sendFile(path.join(__dirname, "../public/user.html"));
     });

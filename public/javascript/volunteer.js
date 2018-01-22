@@ -100,39 +100,37 @@ $(document).ready(function() {
 
     buildUserInput();
 
-    
-
     //    $("#userSubmit").on("click", handleUserSubmit);
 
-    $("#userSignupForm").on("submit",  function (event) {
+    $("#userSubmit").on("click", function(event) {
         event.preventDefault();
-       
-            var currentUser = $(this).data("userid");
-            var newUser = {
-                first_name: $("#firstName").val(),
-                last_name: $("#lastName").val(),
-                address: $("#inputAddress").val(),
-                city: $("#inputCity").val(),
-                state: $("#inputState").val(),
-                zip_code: $("#inputZip").val(),
-                email: $("#inputUserEmail").val(),
-                dob: $("#DOB").val(),
-                gender: $("#inputGender").val(),
-                phone: $("#inputPhone").val(),
-                days: $("#inputDays").val(),
-                times: $("#inputTimes").val(),
-                skills: $("#inputSkills").val(),
-                experience: $("#inputExperience").val()
-            };
 
-            getUser(newUser);
-      
-    };
+
+        var newUser = {
+            first_name: $("#firstName").val(),
+            last_name: $("#lastName").val(),
+            address: $("#inputAddress").val(),
+            city: $("#inputCity").val(),
+            state: $("#inputState").val(),
+            zip_code: $("#inputZip").val(),
+            email: $("#inputUserEmail").val(),
+            dob: $("#DOB").val(),
+            gender: $("#inputGender").val(),
+            phone: $("#inputPhone").val(),
+            days: $("#inputDays").val(),
+            times: $("#inputTimes").val(),
+            skills: $("#inputSkills").val(),
+            experience: $("#inputExperience").val()
+        };
+
+        getUser(newUser);
+
+    });
 
     function getUser(user) {
 
         var currentUser = $("form").attr("id");
-        console.log(currentUser);
+
         $.ajax({
                 method: "PUT",
                 url: "/api/users/" + currentUser,
@@ -142,139 +140,137 @@ $(document).ready(function() {
                 window.location.href = "/";
             });
     };
-});
-
-        $("#pic_url").upload("/api/upload","pic",function(sucess){
-            console.log("done");
-        })
-
-        // This grabs all the data from all the input forms
 
 
-      var form = $(this);
-      var formdata = false;
-      if(window.FormData) {
-        formdata = new FormData(form[0]) 
-      }
-      
-         var form = $("input")
-      // aws base_url
-      var pic_url = 'https://s3.amazon.com/volunteernowapp/users/';
-      pic_url += form[28].files[0].name;
+    // $("#pic_url").upload("/api/upload", "pic", function(sucess) {
+    //     console.log("done");
+    // })
 
-        console.log(pic_url);
-
-        
-
-        var newUser = {
-            first_name: $("#firstName").val(),
-            last_name: $("#lastName").val(),
-            address: $("#inputAddress").val(),
-            city: $("#inputCity").val(),
-            state: $("#inputState").val(),
-            zip_code: $("#inputZip").val(),
-            dob: $("#DOB").val(),
-            gender: $("#inputGender").val(),
-            email: $("#inputEmail").val(),
-            phone: $("#inputPhone").val(),
-            days: $("#inputDays").val(),
-            times: $("#inputTimes").val(),
-            skills: $("#inputSkills").val(),
-            experience: $("#inputExperience").val(),
-            pic_url: pic_url
-        };
-  
-       console.log(form[28].files[0]);
-
-        submitUser(newUser);
-    })
-   
+    // This grabs all the data from all the input forms
 
 
-    function submitUser(user) {
-        console.log(user);
+    // var form = $(this);
+    // var formdata = false;
+    // if (window.FormData) {
+    //     formdata = new FormData(form[0])
+    // }
 
-        $.post("/api/users", user, function() {
-            //   window.location.href = "/users";
-        });
-    }
+    // var form = $("input")
+    // // aws base_url
+    // var pic_url = 'https://s3.amazon.com/volunteernowapp/users/';
+    // pic_url += form[28].files[0].name;
 
-// Ajax File upload with jQuery and XHR2
-// Sean Clark http://square-bracket.com
-// xhr2 file upload
-$.fn.upload = function(remote, data, successFn, progressFn) {
-    // if we dont have post data, move it along
-    if (typeof data != "object") {
-        progressFn = successFn;
-        successFn = data;
-    }
+    // console.log(pic_url);
 
-    var formData = new FormData();
 
-    var numFiles = 0;
-    this.each(function() {
-        var i, length = this.files.length;
-        var name = 'pic';
-        numFiles += length;
-        for (i = 0; i < length; i++) {
-            formData.append(name, this.files[i]);
-        }
-    });
 
-    // if we have post data too
-    if (typeof data == "object") {
-        for (var i in data) {
-            formData.append(i, data[i]);
-        }
-    }
+    // var newUser = {
+    //     first_name: $("#firstName").val(),
+    //     last_name: $("#lastName").val(),
+    //     address: $("#inputAddress").val(),
+    //     city: $("#inputCity").val(),
+    //     state: $("#inputState").val(),
+    //     zip_code: $("#inputZip").val(),
+    //     dob: $("#DOB").val(),
+    //     gender: $("#inputGender").val(),
+    //     email: $("#inputEmail").val(),
+    //     phone: $("#inputPhone").val(),
+    //     days: $("#inputDays").val(),
+    //     times: $("#inputTimes").val(),
+    //     skills: $("#inputSkills").val(),
+    //     experience: $("#inputExperience").val(),
+    //     pic_url: pic_url
+    // };
 
-    var def = new $.Deferred();
-    if (numFiles > 0) {
-        // do the ajax request
-        $.ajax({
-            url: remote,
-            type: "POST",
-            xhr: function() {
-                myXhr = $.ajaxSettings.xhr();
-                if(myXhr.upload && progressFn){
-                    myXhr.upload.addEventListener("progress", function(prog) {
-                        var value = ~~((prog.loaded / prog.total) * 100);
+    // console.log(form[28].files[0]);
 
-                        // if we passed a progress function
-                        if (typeof progressFn === "function") {
-                            progressFn(prog, value);
+    // submitUser(newUser);
 
-                        // if we passed a progress element
-                        } else if (progressFn) {
-                            $(progressFn).val(value);
-                        }
-                    }, false);
-                }
-                return myXhr;
-            },
-            data: formData,
-            dataType: "json",
-            cache: false,
-            contentType: false,
-            processData: false,
-            complete: function(res) {
-                var json;
-                try {
-                    json = JSON.parse(res.responseText);
-                } catch(e) {
-                    json = res.responseText;
-                }
-                if (typeof successFn === "function") successFn(json);
-                def.resolve(json);
-            }
-        });
-    } else {
-        def.reject();
-    }
 
-    return def.promise();
-};  
 
+
+    // function submitUser(user) {
+    //     console.log(user);
+
+    //     $.post("/api/users", user, function() {
+    //         //   window.location.href = "/users";
+    //     });
+    // }
+
+    // Ajax File upload with jQuery and XHR2
+    // Sean Clark http://square-bracket.com
+    // xhr2 file upload
+    // $.fn.upload = function(remote, data, successFn, progressFn) {
+    //     // if we dont have post data, move it along
+    //     if (typeof data != "object") {
+    //         progressFn = successFn;
+    //         successFn = data;
+    //     }
+
+    //     var formData = new FormData();
+
+    //     var numFiles = 0;
+    //     this.each(function() {
+    //         var i, length = this.files.length;
+    //         var name = 'pic';
+    //         numFiles += length;
+    //         for (i = 0; i < length; i++) {
+    //             formData.append(name, this.files[i]);
+    //         }
+    //     });
+
+    //     // if we have post data too
+    //     if (typeof data == "object") {
+    //         for (var i in data) {
+    //             formData.append(i, data[i]);
+    //         }
+    //     }
+
+    //     var def = new $.Deferred();
+    //     if (numFiles > 0) {
+    //         // do the ajax request
+    //         $.ajax({
+    //             url: remote,
+    //             type: "POST",
+    //             xhr: function() {
+    //                 myXhr = $.ajaxSettings.xhr();
+    //                 if (myXhr.upload && progressFn) {
+    //                     myXhr.upload.addEventListener("progress", function(prog) {
+    //                         var value = ~~((prog.loaded / prog.total) * 100);
+
+    //                         // if we passed a progress function
+    //                         if (typeof progressFn === "function") {
+    //                             progressFn(prog, value);
+
+    //                             // if we passed a progress element
+    //                         } else if (progressFn) {
+    //                             $(progressFn).val(value);
+    //                         }
+    //                     }, false);
+    //                 }
+    //                 return myXhr;
+    //             },
+    //             data: formData,
+    //             dataType: "json",
+    //             cache: false,
+    //             contentType: false,
+    //             processData: false,
+    //             complete: function(res) {
+    //                 var json;
+    //                 try {
+    //                     json = JSON.parse(res.responseText);
+    //                 } catch (e) {
+    //                     json = res.responseText;
+    //                 }
+    //                 if (typeof successFn === "function") successFn(json);
+    //                 def.resolve(json);
+    //             }
+    //         });
+    //     } else {
+    //         def.reject();
+    //     }
+
+    //     return def.promise();
+    // };
 
 })
-
