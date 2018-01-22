@@ -1,0 +1,22 @@
+
+{{#each opportunity }}
+	<div class="col-md-6 col-sm-12">
+		<div class="thumbnail">
+			<img alt="Bootstrap Thumbnail First" src="{{this.img_url}}" />
+			<div class="caption">	
+		  	   <h3>{{this.title}}</h3>
+		       <p>{{this.opp_description}}</p>
+		       <p>Location: {{this.address}},  {{this.city}}, {{this.state}} {{this.zip}}</p>
+		       <p>Contact: {{this.contact}} Email: {{this.email}}</p>
+		       <p>Starts:  {{this.start_date_time}} Ends: {{this.end_date_time}}</p>
+		       <p>Skills required: {{this.skills_needed}}</p>
+		       <p>Total volunteers needed: {{this.num_of_volunteers}}</p>
+			</div>
+		</div>
+	</div>
+{{/each}}
+
+
+<script type="text/javascript">
+$(".headerLabel").append("Volunteer opportunities that match your search:");
+</script>
