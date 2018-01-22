@@ -1,10 +1,37 @@
 $(document).ready(function() {
 
-    function buildOrgInput() {
-
+    function buildOpportunitySearch() {
+        var skills = ["Fundraising", "Event Planning", "Organization", "Bookkeeping", "Leadership", "Crafts", "Electrical", "Carpentry", "Cooking", "Clean Up"];
         var causes = ["Advocacy", "Animals", "Arts", "Boards", "Children", "Community", "IT", "Crisis", "Disasters", "Education", "Emergency", "Employment", "Environment", "Health & Medicine","Homelessness & Housing","Hunger","Immigrants", "International","Justice & Legal", "Politics", "Seniors","Sports & Recreation"];
         var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
         var updating = false;
+
+
+
+        var l = 1;
+        for (var i = 0; i < skills.length; i++) {
+            var skills1 = $("<div>").add("<input>");
+            skills1.addClass("form-check-input skills");
+            skills1.attr("type", "checkbox");
+            skills1.attr("id", "skill" + (i + 1));
+            skills1.attr("value", "option " + (i + 1));
+            var skills2 = $("<label>");
+            skills2.addClass("form-check-label");
+            skills2.attr("for", "inlineCheckbox" + (i + 1));
+            skills2.text(skills[i]);
+            appendSkills();
+
+            function appendSkills() {
+                var skillsClass = "#skills" + l;
+                $(skillsClass).append(skills1);
+                $(skillsClass).append(skills2);
+                if (l === 3) {
+                    l = 1;
+                } else {
+                    l++;
+                }
+            }
+        }
 
         var l = 1;
         for (var i = 0; i < causes.length; i++) {
@@ -17,9 +44,9 @@ $(document).ready(function() {
             causes2.addClass("form-check-label");
             causes2.attr("for", "inlineCheckbox" + (i + 1));
             causes2.text(causes[i]);
-            appendSkills();
+            appendCauses();
 
-            function appendSkills() {
+            function appendCauses() {
                 var causesClass = "#causes" + l;
                 $(causesClass).append(causes1);
                 $(causesClass).append(causes2);
@@ -40,36 +67,28 @@ $(document).ready(function() {
 
     }
 
-    buildOrgInput();
+    buildOpportunitySearch();
 
-    $("#orgSignUp-submit").on("click", handleOrgSubmit);
+    $("#opportunitySearch-submit").on("click", handleOpportunitySearchSubmit);
 
-    function handleOrgSubmit() {
+    function handleOpportunitySearchSubmit() {
         event.preventDefault();
 
-        var newOrg = {
-            org_name: $("#org_name").val(),
-            mission: $("#mission").val(),
-            org_description: $("#org_description").val(),
-            org_logo: $("#org_logo").val(),                        
-            address1: $("#address1").val(),
-            address2: $("#address2").val(),            
-            city: $("#city").val(),
-            state: $("#state").val(),
+        var opportunitySearch = {
             zip_code: $("#zip").val(),
-            volunteerCoordinator: $("#volunteerCoordinator").val(),            
-            email: $("#email").val(),
-            phone: $("#phone").val()
+            start_date_time: $('#inputStartDateTime').val(),          
+            end_date_time: $('#inputEndDateTime').val(), 
+            skills_needed: $("#inputSkills").val(), 
+            org_type_id: $("#inputCauses").val()           
         };
 
-        submitOrg(newOrg);
+console.log("Opportunity Search= " + opportunitySearch)
     }
 
-    function submitOrg(org) {
-        $.post("/api/org", org, function() {
-            window.location.href = "/orgs";
+    function submitOpportunitySearch(opportunitySearch) {
+        $.get("/api/opportunitySearch", opportunitySearch, function(result) {
+            window.location.href = "/opportunitySearch";
         });
     }
-
     
 })

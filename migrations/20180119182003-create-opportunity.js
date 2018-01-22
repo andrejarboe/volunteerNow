@@ -1,62 +1,57 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Opportunities', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      first_name: {
+      title: {
         type: Sequelize.STRING
       },
-      last_name: {
+      contact: {
         type: Sequelize.STRING
       },
       address: {
         type: Sequelize.STRING
       },
+      org_id: {
+        type: Sequelize.INTEGER
+      },
       city: {
         type: Sequelize.STRING
       },
-      zip_code: {
+      state: {
         type: Sequelize.STRING
       },
-      dob: {
-        type: Sequelize.DATE        
+      num_of_volunteers: {
+        type: Sequelize.INTEGER
       },
-      gender: {
+      skills_needed: {
         type: Sequelize.STRING
       },
-      email: {
+      img_url: {
         type: Sequelize.STRING
       },
-      skils: {
-        type: Sequelize.STRING
+      org_type_id: {
+        type: Sequelize.INTEGER
       },
-      experience: {
-        type: Sequelize.STRING
-      },
-      password: {
-        type: Sequelize.STRING
-      },
-      password_confirmation: {
+      phone: {
         type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        type: Sequelize.DATE
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Opportunities');
   }
 };

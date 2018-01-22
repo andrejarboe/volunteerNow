@@ -30,14 +30,15 @@ body,
 
 #userHeaderImage {
     max-width: 100%;
-    max-height: 200px;
+    max-height: 125px;
     text-align: left;
 }
 
-#userHeaderLabel {
+.headerLabel {
     text-align: center;
     color: #818084;
     margin-top: 43px;
+    font-size: 42px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,900);
@@ -77,7 +78,7 @@ body {
     font-size: 4em;
 }
 
-.header .bounce,
+/*.header .bounce,
 .footer .bounce {
     -webkit-animation-name: bounce;
     animation-name: bounce;
@@ -94,7 +95,7 @@ body {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
-
+*/
 .section {
     width: 100%;
     position: relative;
@@ -215,6 +216,11 @@ body {
     font-size: 18px;
 }
 
+#button2 {
+    background: #56b94c;
+        font-size: 18px;
+}
+
 #button3 {
     background: #ed1d8f;
         font-size: 18px;
@@ -225,10 +231,6 @@ body {
         font-size: 18px;
 }
 
-#button2 {
-    background: #56b94c;
-        font-size: 18px;
-}
 
 .section .title h2 {
     margin-top: 0;
@@ -302,7 +304,8 @@ body {
     display: block;
 }
 
-@-webkit-keyframes bounce {
+<<<<<<< Updated upstream
+/*@-webkit-keyframes bounce {
     0%,
     20%,
     50%,
@@ -332,8 +335,10 @@ body {
     60% {
         transform: translateY(-10px);
     }
-}
+}*/
 
+=======
+>>>>>>> Stashed changes
 #navbar {
     position: relative;
     float: right;
@@ -363,7 +368,7 @@ body {
     margin-right: 10px;
 }
 
-#userSubmit {
+#userSubmit, #registerSubmit {
     background-color: #63bee9;
     border: 1px solid #818084;
     border-radius: 4px;

@@ -1,16 +1,7 @@
-<div class = "handlebar-nav">
-	<ul>
-		<li> <a href= "./users">Volunteers</a> </li>
-		{{!-- <li> | </li>
-		<li> <a href= "./female-friends">Female Friends </li>
-		<li> | </li>
-		<li> <a href= "./male-friends">Male Friends </li> --}}
-	</ul>
-</div>
 
 
 {{#each usersData }}
-	<div class="col-md-3">
+	<div class="col-md-3 col-sm-6">
 		<a href="/user/{{id}}">
 			<div class="thumbnail">
 				<img alt="Bootstrap Thumbnail First" id="{{id}}" src="{{pic_url}}" />
@@ -30,20 +21,22 @@
     }).then(
       function(data) {
         console.log(data);
+       $(".headerLabel").append("Volunteers");
         // Reload the page to get the updated list
 
       });
 
 
-$(".thumbnail").on("click", handleUserSubmit);
+
+$(".thumbnail").on("click", function(){;
 $.ajax("/api/user/id", {
       type: "GET",
       
     }).then(
       function(data) {
-        console.log(data);
+      	console.log(data);
         // Reload the page to get the updated list
-
+})
       });
         
 

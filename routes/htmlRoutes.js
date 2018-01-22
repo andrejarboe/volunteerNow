@@ -5,15 +5,21 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+
 var fs = require("fs");
 var sequelizeRouter = require("sequelize-router");
 var db = require("../models");
 
 var users = [];
+// var fs = require('fs');
+// // var sequelizeRouter = require('sequelize-router');
+// var usersData = require("../data/user");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
+
   // index route loads index page
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
@@ -97,4 +103,37 @@ module.exports = function(app) {
   app.get("/images/logo.png", function(req, res) {
     res.sendFile(__dirname, "../public/images/logo.png");
   });
+};
+
+
+    // index route loads index page
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
+
+    //user sign up forum
+    app.get("/signup", function(req, res) {
+        //   var fileContents = fs.readFileSync('./public/javascript/volunteer.js');
+        // res.write(fileContents);
+        // If the user already has an account send them to the login page
+        if (req.user) {
+            res.redirect("/");
+        }
+        res.sendFile(path.join(__dirname, "../public/signup.html"));
+    });
+
+    app.get("/login", function(req, res) {
+         if (req.user) {
+            res.redirect("/");
+        }
+        res.sendFile(path.join(__dirname, "../public/login.html"));
+    });
+
+    //organization sign up forum
+    app.get("/users", isAuthenticated, function(req, res) {
+
+        res.sendFile(path.join(__dirname, "../public/user.html"));
+    });
+
+
 };
