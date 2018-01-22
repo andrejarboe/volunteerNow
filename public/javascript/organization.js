@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     }
 
-    buildOrganizationInput();
+    buildOrgInput();
 
     $("#orgSignUp-submit").on("click", handleOrgSubmit);
 
@@ -57,14 +57,12 @@ $(document).ready(function() {
             city: $("#city").val(),
             state: $("#state").val(),
             zip_code: $("#zip").val(),
-            volunteerCoordinator: $("#volunteerCoordinator").val(),
-            mission: $("#mission").val(),            
+            volunteerCoordinator: $("#volunteerCoordinator").val(),            
             email: $("#email").val(),
-            phone: $("#phone").val(),
+            phone: $("#phone").val()
         };
 
         submitOrg(newOrg);
-
     }
 
     function submitOrg(org) {
