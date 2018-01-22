@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       dob: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE        
       },
       gender: {
         type: Sequelize.STRING
