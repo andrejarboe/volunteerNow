@@ -7,7 +7,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-// var sequelizeRouter = require('sequelize-router');
+ var sequelizeRouter = require('sequelize-router');
 var exphbs = require("express-handlebars"); 
 const busboy = require('connect-busboy');
 const busboyBodyParser = require('busboy-body-parser');
@@ -46,7 +46,7 @@ app.use(passport.session());
 require('./routes/htmlRoutes.js')(app);
 require('./routes/apiRoutes.js')(app);
 
- 
+ app.use('/api', sequelizeRouter(db.Opportunity));
 //app.use('/api', sequelizeRouter(db.User)); 
 
 // Syncing our sequelize models and then starting our Express app
