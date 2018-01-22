@@ -96,7 +96,6 @@ $(document).ready(function() {
             gender.text(genders[i]);
             $("#inputGender").append(gender);
         }
-
     }
 
     buildUserInput();
@@ -105,33 +104,45 @@ $(document).ready(function() {
 
     function handleUserSubmit(event) {
         event.preventDefault();
+       
+            var currentUser = $(this).data("userid");
+            var newUser = {
+                first_name: $("#firstName").val(),
+                last_name: $("#lastName").val(),
+                address: $("#inputAddress").val(),
+                city: $("#inputCity").val(),
+                state: $("#inputState").val(),
+                zip_code: $("#inputZip").val(),
+                email: $("#inputUserEmail").val(),
+                dob: $("#DOB").val(),
+                gender: $("#inputGender").val(),
+                phone: $("#inputPhone").val(),
+                days: $("#inputDays").val(),
+                times: $("#inputTimes").val(),
+                skills: $("#inputSkills").val(),
+                experience: $("#inputExperience").val()
+            };
 
-        var newUser = {
-            first_name: $("#firstName").val(),
-            last_name: $("#lastName").val(),
-            address: $("#inputAddress").val(),
-            city: $("#inputCity").val(),
-            state: $("#inputState").val(),
-            zip_code: $("#inputZip").val(),
-            dob: $("#DOB").val(),
-            gender: $("#inputGender").val(),
-            email: $("#inputEmail").val(),
-            phone: $("#inputPhone").val(),
-            days: $("#inputDays").val(),
-            times: $("#inputTimes").val(),
-            skills: $("#inputSkills").val(),
-            experience: $("#inputExperience").val()
-        };
+            getUser(newUser);
+      
+    };
 
-        submitUser(newUser);
+    function getUser(user) {
 
-    }
+        var currentUser = $("form").attr("id");
+        console.log(currentUser);
+        $.ajax({
+                method: "PUT",
+                url: "/api/users/" + currentUser,
+                data: user
+            })
+            .then(function(data) {
+                window.location.href = "/";
+            });
 
-    function submitUser(user) {
-        $.post("/api/user", user, function() {
-            window.location.href = "/users";
-        });
-    }
+    };
 
-    
-})
+
+
+
+});

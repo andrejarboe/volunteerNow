@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VolunteerNOW</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/userstyle.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-md-4">
+            <img id="userHeaderImage" src="/images/logo3.png" alt="logo">
+        </div>
+        <div class="col-md-4">
+            <div>
+                <h1 class="headerLabel">Volunteer Log In</h1>
+            </div>
+        </div>
+    </div>
+    <div id="userInput" class="container">
+        <div class="row">
+            <div class="col-md-6 jumbotron col-md-offset-3">
+                <form class="signup">
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                    <div style="display: none" id="emailalert" class="alert alert-danger" role="alert">
+                        <label>Invalid Email Address</label>
+                    </div>
+                    <div style="display: none" id="passwordalert" class="alert alert-danger" role="alert">
+                        <label>Passwords do not match</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="password-input" placeholder="Password">
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <button type="submit" id="loginSubmit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascript/volunteer.js"></script>
+        <script type="text/javascript" src="/javascript/login.js"></script>
+</body>
+
+</html>
