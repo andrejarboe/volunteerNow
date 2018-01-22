@@ -300,4 +300,4 @@ app.post('/api/upload', function (req, res, next) {
             res.json(dbOrganization);
         });
     });
-
+}
