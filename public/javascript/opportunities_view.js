@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    function buildOpportunityInput() {
+    function buildOpportunitySearch() {
         var skills = ["Fundraising", "Event Planning", "Organization", "Bookkeeping", "Leadership", "Crafts", "Electrical", "Carpentry", "Cooking", "Clean Up"];
         var causes = ["Advocacy", "Animals", "Arts", "Boards", "Children", "Community", "IT", "Crisis", "Disasters", "Education", "Emergency", "Employment", "Environment", "Health & Medicine","Homelessness & Housing","Hunger","Immigrants", "International","Justice & Legal", "Politics", "Seniors","Sports & Recreation"];
         var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
@@ -67,11 +67,11 @@ $(document).ready(function() {
 
     }
 
-    buildOpportunityInput();
+    buildOpportunitySearch();
 
-    $("#opportunityPost-submit").on("click", handleOpportunitySubmit);
+    $("#opportunitySearch-submit").on("click", handleOpportunitySearchSubmit);
 
-    function handleOpportunitySubmit() {
+    function handleOpportunitySearchSubmit() {
         event.preventDefault();
 
         var opportunity = {
@@ -82,10 +82,8 @@ $(document).ready(function() {
             city: $("#city").val(),
             state: $("#state").val(),
             zip_code: $("#zip").val(),
-            // datetimepicker1: $('#datetimepicker6').datetimepicker().val(),          
-            // datetimepicker2: $('#datetimepicker7').datetimepicker().val(), 
-            startDateTime: $('#datetimepicker6').val(),          
-            endDateTime: $('#datetimepicker7').val(), 
+            startDateTime: $('#inputStartDateTime').val(),          
+            endDateTime: $('#inputEndDateTime').val(), 
             skills_needed: $("#inputSkills").val(), 
             org_type_id: $("#inputCauses").val(), 
             opp_description: $("#description").val(),
@@ -94,12 +92,12 @@ $(document).ready(function() {
             img_url: $("#img_url").val()            
         };
 
-console.log("Opportunity = " + opportunity)
+console.log("Opportunity Search= " + opportunitySearch)
     }
 
-    function submitOpportunity(opportunity) {
-        $.post("/api/opportunityPost", opportunity, function() {
-            window.location.href = "/opportunityPost";
+    function submitOpportunitySearch(opportunitySearch) {
+        $.post("/api/opportunitySearch", opportunitySearch, function() {
+            window.location.href = "/opportunitySearch";
         });
     }
 
