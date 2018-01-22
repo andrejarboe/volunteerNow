@@ -75,21 +75,20 @@ $(document).ready(function() {
         event.preventDefault();
 
         var opportunitySearch = {
+<<<<<<< HEAD
             title: $("#opportunity-title").val(),
             contact: $("#opportunity-contact").val(),
             email: $("#email").val(),          
             address1: $("#address").val(),           
             city: $("#city").val(),
             state: $("#state").val(),
+=======
+>>>>>>> a273e447e2402bf55fcfdaee4d6119812366c390
             zip_code: $("#zip").val(),
-            startDateTime: $('#inputStartDateTime').val(),          
-            endDateTime: $('#inputEndDateTime').val(), 
+            start_date_time: $('#inputStartDateTime').val(),          
+            end_date_time: $('#inputEndDateTime').val(), 
             skills_needed: $("#inputSkills").val(), 
-            org_type_id: $("#inputCauses").val(), 
-            opp_description: $("#description").val(),
-            phone: $("#phone").val(),
-            num_of_volunteers: $("#num_of_volunteers").val(),            
-            img_url: $("#img_url").val()            
+            org_type_id: $("#inputCauses").val()           
         };
 
 console.log("Opportunity Search= " + opportunitySearch)
@@ -98,19 +97,14 @@ var test = JSON.stringify(opportunitySearch);
 console.log(test);
 
     function submitOpportunitySearch(opportunitySearch) {
+<<<<<<< HEAD
         $.get("/api/opportunity", opportunitySearch, function(result) {
             console.log(result);
+=======
+        $.get("/api/opportunitySearch", opportunitySearch, function(result) {
+>>>>>>> a273e447e2402bf55fcfdaee4d6119812366c390
             window.location.href = "/opportunitySearch";
         });
     }
-
-
-                                        // <h3 id="opportunityTitle"></h3>
-                                        // <p id="opportunityDescription"></p>
-                                        // <h5 id="opportunityLocation"></h5>
-                                        // <h5 id="opportunityContact"></h5>
-                                        // <h5 id="opportunitySchedule"></h5>
-                                        // <h5 id="opportunitySkillsRequired"></h5>
-                                        // <h5 id="opportunityVolunteersNeeded"></h5>
     
 })
