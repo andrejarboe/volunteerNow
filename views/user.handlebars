@@ -12,13 +12,13 @@
 {{!-- {{#each user }} --}}
 	<div class="col-md-3">
 		<div class="thumbnail">
-			<img alt="Bootstrap Thumbnail First" src="{{pic_url}}" />
+			<img alt="Bootstrap Thumbnail First" src="{{user.pic_url}}" />
 			<div class="caption">	
-				<p id="handlebar-title">{{first_name}},{{last_name}}</p>
-				<p>{{address}} </p>
-				<p>{{city}},{{ state}},{{zip_code}} </p>
-				<p>{{phone}} </p>		
-				<p>{{email}} </p>
+				<p id="handlebar-title">{{user.first_name}},{{user.last_name}}</p>
+				<p>{{user.address}} </p>
+				<p>{{user.city}},{{ user.state}},{{user.zip_code}} </p>
+				<p>{{user.phone}} </p>		
+				<p>{{user.email}} </p>
 			</div>
 		</div>
 	</div>
