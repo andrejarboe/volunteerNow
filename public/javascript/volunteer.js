@@ -96,7 +96,6 @@ $(document).ready(function() {
             gender.text(genders[i]);
             $("#inputGender").append(gender);
         }
-
     }
 
     buildUserInput();
@@ -106,10 +105,45 @@ $(document).ready(function() {
     //    $("#userSubmit").on("click", handleUserSubmit);
 
     $("#userSignupForm").on("submit",  function (event) {
-
-        
-   
         event.preventDefault();
+       
+            var currentUser = $(this).data("userid");
+            var newUser = {
+                first_name: $("#firstName").val(),
+                last_name: $("#lastName").val(),
+                address: $("#inputAddress").val(),
+                city: $("#inputCity").val(),
+                state: $("#inputState").val(),
+                zip_code: $("#inputZip").val(),
+                email: $("#inputUserEmail").val(),
+                dob: $("#DOB").val(),
+                gender: $("#inputGender").val(),
+                phone: $("#inputPhone").val(),
+                days: $("#inputDays").val(),
+                times: $("#inputTimes").val(),
+                skills: $("#inputSkills").val(),
+                experience: $("#inputExperience").val()
+            };
+
+            getUser(newUser);
+      
+    };
+
+    function getUser(user) {
+
+        var currentUser = $("form").attr("id");
+        console.log(currentUser);
+        $.ajax({
+                method: "PUT",
+                url: "/api/users/" + currentUser,
+                data: user
+            })
+            .then(function(data) {
+                window.location.href = "/";
+            });
+    };
+});
+
         $("#pic_url").upload("/api/upload","pic",function(sucess){
             console.log("done");
         })
@@ -149,16 +183,12 @@ $(document).ready(function() {
             experience: $("#inputExperience").val(),
             pic_url: pic_url
         };
-       
-      
-    
-       
+  
        console.log(form[28].files[0]);
-
 
         submitUser(newUser);
     })
-    
+   
 
 
     function submitUser(user) {
@@ -247,3 +277,4 @@ $.fn.upload = function(remote, data, successFn, progressFn) {
 
 
 })
+
