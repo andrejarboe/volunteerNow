@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "g3t5mart",
+    "password": "admin",
     "database": "volunteer_now_DB",
     "host": "127.0.0.1",
     "dialect": "mysql"
