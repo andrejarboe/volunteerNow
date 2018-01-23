@@ -36,6 +36,7 @@ app.set("view engine", "handlebars");
 // Static directory
 app.use(express.static(path.join(__dirname, "/public")));
 app.use("/user",express.static(path.join(__dirname, "/public")));
+app.use("/organization",express.static(path.join(__dirname, "/public")));
 
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
