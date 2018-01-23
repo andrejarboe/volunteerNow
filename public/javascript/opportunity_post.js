@@ -82,8 +82,6 @@ $(document).ready(function() {
             city: $("#city").val(),
             state: $("#state").val(),
             zip_code: $("#zip").val(),
-            // datetimepicker1: $('#datetimepicker6').datetimepicker().val(),          
-            // datetimepicker2: $('#datetimepicker7').datetimepicker().val(), 
             startDateTime: $('#datetimepicker6').val(),          
             endDateTime: $('#datetimepicker7').val(), 
             skills_needed: $("#inputSkills").val(), 
