@@ -6,15 +6,15 @@
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- css reset-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- custom css-->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/userstyle.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-
 </head>
 
 <body>
@@ -23,8 +23,8 @@
             <img id="userHeaderImage" src="./images/logo3.png" alt="logo">
         </div>
         <div class="col-md-4">
-            <div >
-                <h1 id="userHeaderLabel">Organization Sign Up</h1>
+            <div>
+                <h1 class="headerLabel">Organization Sign Up</h1>
             </div>
         </div>
     </div>
@@ -32,10 +32,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default survey-main">
-<!--                     <div class="panel-heading">
+                    <!--                     <div class="panel-heading">
                         <h2 class="panel-title">
-						Tell Us About Your Organization 
-					</h2>
+                        Tell Us About Your Organization 
+                    </h2>
                     </div> -->
                     <div class="panel-body" id="questions">
                         <div class="form-group col-md-4 col-sm-6">
@@ -46,10 +46,10 @@
                             <label for="mission">Organization Mission:</label>
                             <textarea class="form-control" id="mission" rows="5" required></textarea>
                         </div>
-		  				<div class="form-group col-md-4 col-sm-6">
-		    				<label for="org_description">Organization Description:</label>
-		    				<textarea class="form-control" id="org_description" rows="5" required></textarea>
-		  				</div>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="org_description">Organization Description:</label>
+                            <textarea class="form-control" id="org_description" rows="5" required></textarea>
+                        </div>
                         <div class="form-group col-md-3 col-sm-12">
                             <label for="causes">Causes</label>
                         </div>
@@ -63,15 +63,15 @@
                         <div class="form-group col-md-4 col-sm-6">
                             <label for="org_logo">Logo html link:</label>
                             <input type="text" class="form-control" id="org_logo">
-                        </div>                                                
+                        </div>
                         <div class="form-group col-md-4 col-sm-6">
                             <label for="address1">Address:</label>
-							<input type="text" class="form-control" id="address1" required>
+                            <input type="text" class="form-control" id="address1" required>
                         </div>
-					    <div class="form-group col-md-4 col-sm-6">
-    						<label for="address2">Address 2</label>
-    						<input type="text" class="form-control" id="address2">
-  						</div>                        
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label for="address2">Address 2</label>
+                            <input type="text" class="form-control" id="address2">
+                        </div>
                         <div class="form-group col-md-4 col-sm-6">
                             <label for="city">City:</label>
                             <input type="text" class="form-control" id="city" required>
@@ -84,12 +84,12 @@
                         </div>
                         <div class="form-group col-md-4 col-sm-6">
                             <label for="zip">Zip Code:</label>
-							<input type="text" class="form-control" id="zip" required>
+                            <input type="text" class="form-control" id="zip" required>
                         </div>
                         <div class="form-group col-md-4 col-sm-6">
-                            <!-- <br>   -->                          
+                            <!-- <br>   -->
                             <label for="volunteerCoordinator">Volunteer Coordinator Contact Name:</label>
-							<input type="text" class="form-control" id="volunteerCoordinator" required>
+                            <input type="text" class="form-control" id="volunteerCoordinator" required>
                         </div>
                         <div class="form-group col-md-4 col-sm-6">
                             <label for="email">Email:</label>
@@ -97,17 +97,14 @@
                         </div>
                         <div class="form-group col-md-4 col-sm-6">
                             <label for="phone">Phone:</label>
-							<input type="text" class="form-control" id="phone" required>
+                            <input type="text" class="form-control" id="phone" required>
                         </div>
-
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="orgSignUp-submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit </button>
-
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="orgSignUp-submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script type="text/javascript" src="./javascript/organization.js"></script>
+        <script type="text/javascript" src="./javascript/organization.js"></script>
 </body>
 
 </html>

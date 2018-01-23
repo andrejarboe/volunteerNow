@@ -55,11 +55,11 @@ module.exports = function(app) {
     });
 
 
-app.post("/profile", passport.authenticate("local"), function(req, res) {
+app.post("/volunteer/profile", passport.authenticate("local"), function(req, res) {
         // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
         // So we're sending the user back the route to the members page because the redirect will happen on the front end
         // They won't get this or even be able to access this page if they aren't authed
-        res.json("/profile");
+        res.json("/volunteer/profile");
     });
 
     // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -70,7 +70,7 @@ app.post("/profile", passport.authenticate("local"), function(req, res) {
             email: req.body.email,
             password: req.body.password
         }).then(function() {
-            res.redirect(307, "/profile");
+            res.redirect(307, "/volunteer/profile");
         }).catch(function(err) {
             console.log(err);
             res.json(err);
