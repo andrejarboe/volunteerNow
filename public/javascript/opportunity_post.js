@@ -97,7 +97,7 @@ $(document).ready(function() {
         console.log("Opportunity = " + opportunity)
 
         $.post("/api/opportunity", opportunity, function() {
-            window.location.href = "/opportunity";
+            window.location.href = "/opportunities";
         });
     }
 
