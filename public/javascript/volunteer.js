@@ -1,4 +1,7 @@
 $(document).ready(function() {
+   // import "file_upload_helper";
+
+
 
     function buildUserInput() {
         var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -267,7 +270,7 @@ $(document).ready(function() {
     //             }
     //         });
     //     } else {
-    //         def.reject();
+    //         def.reject();riolffffcx n
     //     }
 
     //     return def.promise();
