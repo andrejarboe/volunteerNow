@@ -1,0 +1,21 @@
+{{#each organizations }}
+	<div class="col-md-3 col-sm-6">
+		<div class="thumbnail">
+			<a href="/organization/{{id}}">
+			<img alt="Bootstrap Thumbnail First" src="{{photo}}" />
+			<div class="caption">	
+				<p id="handlebar-title">{{organization_name}}</p>
+				<p>{{organization_desc}}</p>
+				<p>{{address}}</p>
+				<p>{{city}}, {{state}} {{zip}}</p>
+				<p><strong>Contact Person: </strong> {{contact_person}}-{{contact_person_role}}</p>
+				<p><strong>Email: </strong> {{email}}</p>
+				<p><strong>Phone: </strong> {{phone}}</p>		
+			</div>
+		</div>
+	</div>
+{{/each}}
+
+<script type="text/javascript">
+$(".headerLabel").append("Organizations");
+</script>

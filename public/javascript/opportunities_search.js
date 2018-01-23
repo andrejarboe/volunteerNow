@@ -75,6 +75,15 @@ $(document).ready(function() {
         event.preventDefault();
 
         var opportunitySearch = {
+<<<<<<< HEAD
+            title: $("#opportunity-title").val(),
+            contact: $("#opportunity-contact").val(),
+            email: $("#email").val(),          
+            address1: $("#address").val(),           
+            city: $("#city").val(),
+            state: $("#state").val(),
+=======
+>>>>>>> a273e447e2402bf55fcfdaee4d6119812366c390
             zip_code: $("#zip").val(),
             start_date_time: $('#inputStartDateTime').val(),          
             end_date_time: $('#inputEndDateTime').val(), 
@@ -84,9 +93,16 @@ $(document).ready(function() {
 
 console.log("Opportunity Search= " + opportunitySearch)
     }
+var test = JSON.stringify(opportunitySearch);
+console.log(test);
 
     function submitOpportunitySearch(opportunitySearch) {
+<<<<<<< HEAD
+        $.get("/api/opportunity", opportunitySearch, function(result) {
+            console.log(result);
+=======
         $.get("/api/opportunitySearch", opportunitySearch, function(result) {
+>>>>>>> a273e447e2402bf55fcfdaee4d6119812366c390
             window.location.href = "/opportunitySearch";
         });
     }

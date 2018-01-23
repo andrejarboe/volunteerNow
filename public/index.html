@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <title>VolunteerNOW</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./javascript/index.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./javascript/volunteer.js"></script>
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -24,9 +21,9 @@
                     Volunteers<span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="./user.html">Sign Up</a></li>
+                    <li><a href="/volunteer/signup">Sign Up</a></li>
                     <li><a href="#">Update Profile</a></li>
-                    <li><a href="#">View Events</a></li>
+                    <li><a href="/opportunities">View Events</a></li>
                     <li><a href="#">Manage Your Time</a></li>
                 </ul>
             </div>
@@ -35,10 +32,11 @@
                     Organizations<span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="/organization/signup">Sign Up</a></li>
                     <li><a href="#">Update Profile</a></li>
-                    <li><a href="#">Add Event</a></li>
+                    <li><a href="/organization/newevent">Add Event</a></li>
                     <li><a href="#">Update Event</a></li>
+                    <li><a href="#">Search Volunteers</a></li>
                 </ul>
             </div>
         </div>
@@ -51,8 +49,8 @@
                     About Us<span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Purpose</a></li>
-                    <li><a href="#">Organizations</a></li>
+                    <li><a href="/about-us">Purpose</a></li>
+                    <li><a href="/organizations">Organizations</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -60,12 +58,14 @@
                     Log In<span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="/login">Volunteer</a></li>
                     <li><a href="#">Organization</a></li>
                 </ul>
             </div>
+            <p id="loggedin"><a id="logout" href="/logout">
+        
+      </a></p>
         </div>
-    </div>
     </div>
     <div class="section animate">
         <div class="middle">
@@ -75,7 +75,7 @@
             <div class="content">
                 <h2>Purpose</h2>
                 <p>What we do</p>
-                <a href="#" id="button1" class="btn-primary">Learn more</a>
+                <a href="/about-us" id="button1" class="btn-primary">Learn more</a>
             </div>
         </div>
         <div class="right tiles">
@@ -93,7 +93,7 @@
             <div class="content">
                 <h2>Organizations</h2>
                 <p>See organizations that use VolunteerNOW</p>
-                <a href="#" id="button2" class="btn-primary">Learn more</a>
+                <a href="/organizations" id="button2" class="btn-primary">Learn more</a>
             </div>
         </div>
         <div class="left tiles">
@@ -111,7 +111,7 @@
             <div class="content">
                 <h2>Events</h2>
                 <p>Search volunteer opportunities</p>
-                <a href="#" id="button3" class="btn-primary">Learn More</a>
+                <a href="/opportunities" id="button3" class="btn-primary">Learn More</a>
             </div>
         </div>
         <div class="right tiles">
@@ -141,6 +141,11 @@
     </div>
     <div class="footer">
     </div>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascript/index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="javascript/volunteer.js"></script>
+
 </body>
 
 </html>

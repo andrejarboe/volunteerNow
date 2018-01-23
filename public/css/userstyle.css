@@ -1,0 +1,46 @@
+.caption {
+    text-align: center;
+    font-size: 25px;
+}
+
+.thumbnail {
+    padding-top: 35px;
+    background-color: #d2edf9;
+    border: 1px solid black;
+}
+
+.thumbnailUser {
+    padding-top: 35px;
+    background-color: #d2edf9;
+    border: 1px solid black;
+}
+
+.thumbnailUser img {
+    height: 250px;
+    display: block;
+    margin: auto;
+}
+
+#handlebar-title {
+    font-weight: bold;
+}
+
+.handlebarsP {
+    text-align: left;
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+#hrtop {
+	padding: 0;
+    border-color: #56b94c;
+    border-width: 6px;
+    margin: 5px 0 0 0;
+}
+
+#hrbottom {
+    padding: 0;
+    border-color: #ed1d8f;
+    border-width: 2px;
+    margin: 0 0 25px 0;
+    }
