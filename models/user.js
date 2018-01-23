@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     skills: DataTypes.STRING,
     user_type: DataTypes.STRING,
     experience: DataTypes.STRING,
-    pic_url: DataTypes.STRING,
+    pic_url:{
+             type: DataTypes.STRING,
+              defaultValue: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
+            },
     password: DataTypes.STRING,
     password_confirmation: DataTypes.STRING,
     days_available: DataTypes.STRING,
